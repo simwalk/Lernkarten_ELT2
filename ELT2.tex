@@ -1,0 +1,42 @@
+%
+%    Autor: Simon Walker
+%			simon.walker@hsr.ch
+%
+%	 Dieses LaTeX Dokument benutzt eine Karteikartenklasse welche von Ronny Bergmann <mail@rbergmann.info> entwickelt wurde version 1.8b
+%	 Die Dokumentation und die Karteikartenklasse sind unter folgendem Link erhältlich
+%    https://github.com/kellertuer/Kartei
+
+%------------------------------------------------------------
+% Lernkarten zum Fach ELT2,
+%------------------------------------------------------------
+
+%Nach fertiger Entwicklung grid auf none setzen
+\documentclass[a7paper,10pt,grid=rear% %Grösse der Karteikarten auswählen (A5-A9)
+%,toc			%Komentarlöschen falls eine Zusammenstellung gewünscht wird
+,print			%Komentar löschen falls eine Ausdruckversion erstellt werden soll
+]{kartei}
+
+%Erzeugt im Antwortfeld eine Minipage um zu verhindern dass über den seitlichen Rad geschrieben wird
+%Achtung dadurch wird die überprüfung von zu grossen Antworten unterdrückt
+\newenvironment{lk}[1]{\begin{karte}{#1}\begin{minipage}{0.9\textwidth}}{\end{minipage}\end{karte}}
+
+%\newcommand*{\lk}[2]{\begin{karte}{#1}
+%		\begin{minipage}{\textwidth}
+%			#2
+%		\end{minipage}
+%	}
+
+\usepackage[utf8]{inputenc} %UTF8
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{paralist}
+
+\begin{document}
+	\setcardpagelayout
+	
+	\fach{ELT2}
+	\input{sections/ElektroStatik.tex}
+		
+\end{document}
